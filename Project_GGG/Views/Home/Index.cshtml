@@ -1,4 +1,13 @@
-﻿<div class="section overflow-hidden">
+﻿@using Microsoft.AspNetCore.Builder;
+@using Microsoft.AspNetCore.Localization;
+@using Microsoft.Extensions.Options;
+@using Microsoft.AspNetCore.Mvc.Localization;
+
+@inject IOptions<RequestLocalizationOptions> locOptions
+
+@inject IViewLocalizer _lang
+
+<div class="section overflow-hidden">
     <div class="hero-section">
         <div class="container">
             <div class="hero-section-center-holder" style="-webkit-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)">
@@ -95,7 +104,7 @@
             <div class="section-center-text">
                 <div class="section-title">
                     <div class="fade-in-on-scroll">
-                        <h2 class="title">Artistic Alchemy</h2>
+                        <h2 class="title">@_lang["artalch"]</h2>
                     </div>
                 </div>
                 <div class="section-paragraph medium-length">
