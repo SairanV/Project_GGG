@@ -1,6 +1,11 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Project_GGG.Models;
 using System.Diagnostics;
+using System.Security.Claims;
+using System.Globalization;
 
 namespace Project_GGG.Controllers
 {
@@ -13,14 +18,31 @@ namespace Project_GGG.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        [Authorize]
+        public IActionResult Privacy()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+
+        [IEFilterAttribute]
+        public IActionResult Index(string culture = "")
         {
+            GetCultures(culture);
+
+
             return View();
+        }
+
+        public string GetCultures(string code)
+        {
+            if (!string.IsNullOrWhiteSpace(code))
+            {
+                CultureInfo.CurrentCulture = new CultureInfo(code);
+
+                CultureInfo.CurrentUICulture = new CultureInfo(code);
+            }
+            return "";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

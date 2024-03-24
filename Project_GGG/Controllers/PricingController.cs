@@ -2,7 +2,7 @@
 
 namespace Project_GGG.Controllers
 {
-    public class Contact : Controller
+    public class PricingController : Controller
     {
         public IActionResult Index()
         {

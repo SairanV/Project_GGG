@@ -1,8 +1,39 @@
-﻿<div class="nav-links">
-    <a class="nav-link w-nav-link w--current" asp-controller="Home" asp-action="Index">Home</a>
-    <a class="nav-link w-nav-link" asp-controller="About" asp-action="Index">About</a>
-    <a class="nav-link w-nav-link" asp-controller="Features" asp-action="Index">Features</a>
-    <a class="nav-link w-nav-link" asp-controller="Pricing" asp-action="Index">Pricing</a>
-    <a class="nav-link w-nav-link" asp-controller="Blog" asp-action="Index">Blog</a>
-    <a class="nav-link w-nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
+﻿@using Microsoft.AspNetCore.Builder;
+@using Microsoft.AspNetCore.Localization;
+@using Microsoft.Extensions.Options;
+@using Microsoft.AspNetCore.Mvc.Localization;
+
+@inject IOptions<RequestLocalizationOptions> locOptions
+
+@inject IViewLocalizer _lang
+
+<div class="nav-links">
+    <a class="nav-link w-nav-link w--current" asp-controller="Home" asp-action="Index">@_lang["home"]</a>
+    <a class="nav-link w-nav-link" asp-controller="About" asp-action="Index">@_lang["about"]</a>
+    <a class="nav-link w-nav-link" asp-controller="Features" asp-action="Index">@_lang["features"]</a>
+    <a class="nav-link w-nav-link" asp-controller="Pricing" asp-action="Index">@_lang["pricing"]</a>
+    <a class="nav-link w-nav-link" asp-controller="Blog" asp-action="Index">@_lang["blog"]</a>
+    <a class="nav-link w-nav-link" asp-controller="Contact" asp-action="Index">@_lang["contact"]</a>
+    <a class="nav-link w-nav-link" style="cursor:pointer" onclick="SetCulture('ru-RU');">RU</a> |
+    <a class="nav-link w-nav-link" style="cursor:pointer" onclick="SetCulture('kk-KZ');">KK</a>
+    <form id="cultureForm" asp-action="Index">
+       
+    </form>
 </div>
+
+
+@section script
+{
+    <script>
+        function SetCulture(selectValue) {
+            var culture = "/?culture=" + selectValue;
+
+            document
+                .getElementById("cultureForm")
+                .action = culture;
+            document
+                .getElementById("cultureForm")
+                .submit();
+        }
+    </script>
+}

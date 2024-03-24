@@ -2,7 +2,7 @@
 
 namespace Project_GGG.Controllers
 {
-    public class About : Controller
+    public class FeaturesController : Controller
     {
         public IActionResult Index()
         {

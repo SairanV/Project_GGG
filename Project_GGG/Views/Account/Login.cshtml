@@ -1,0 +1,28 @@
+﻿<div class="w-users-userformpagewrap page-wrapper">
+    <div class="w-users-userloginformwrapper login-form-wrapper">
+        <form   action="@Url.Action("Login", "Account")" method="post">
+            <div class="w-users-userformheader">
+                <h4>Log in to your account</h4>
+                <p>Welcome back! Please enter your details.</p>
+            </div>
+            <div class="text-field-holder">
+                <label class="field-label" for="Email">Email</label><input autocomplete="username" class="text-field w-input" data-wf-user-form-input-type="email" id="wf-log-in-email" maxlength="256" name="Email" placeholder="" required="" type="email">
+            </div>
+            <div class="text-field-holder" >
+                <label class="field-label" for="Password">Password</label><input class="text-field w-input" data-wf-user-form-input-type="password" id="wf-log-in-password" maxlength="256" name="Password" placeholder="" required="" type="password">
+            </div>
+            <div class="login-button-holder">
+                <input class="w-users-userformbutton button w-button" data-wait="Please wait..." type="submit" value="Log In">
+               
+                <div class="w-users-userformfooter">
+                    <span class="field-label">Don&#x27;t have an account?</span><a class="field-label w-inline-block" asp-controller="Account" asp-action="Signup">Sign Up</a>
+                </div>
+            </div>
+        </form>
+        <div class="w-users-userformerrorstate w-form-fail" data-wf-user-form-error="true" style="display:none">
+            <div class="user-form-error-msg">
+                We&#x27;re having trouble logging you in. Please try again, or contact us if you continue to have problems.
+            </div>
+        </div>
+    </div>
+</div>
