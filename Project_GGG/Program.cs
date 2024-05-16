@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Project_GGG;
+using Project_GGG.Models;
 using Serilog;
 using System.Globalization;
 
@@ -10,9 +13,24 @@ var builder = WebApplication.CreateBuilder(args);
 
 Host.CreateDefaultBuilder(args);
 builder.Host.UseSerilog();
+//builder.Host.ConfigureLogging(logging =>
+//{
+//    //logging.ClearProviders();
+//    //logging.AddDebug();
+//    //logging.AddConsole();
+//    //logging.AddEventLog();
+
+//    logging.AddSeq();
+//});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString =
+  builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<ProjectGGGContext>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services
     .AddMvc()
@@ -62,6 +80,22 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseMiddleware<ContentMiddleware>();
+
+
+
+app.Map("/hc", appMap =>
+{
+    appMap.Run(async context =>
+    {
+        await context.Response.WriteAsync("Middleware Test");
+
+    });
+});
+
+
+
 
 var locOptions = app.Services
     .GetService<IOptions<RequestLocalizationOptions>>();

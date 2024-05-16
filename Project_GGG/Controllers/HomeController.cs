@@ -12,10 +12,13 @@ namespace Project_GGG.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private ProjectGGGContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+            ProjectGGGContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
         [Authorize]
