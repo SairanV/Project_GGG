@@ -14,5 +14,7 @@ namespace Project_GGG.Models
 
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
+
+        public string PathToImage { get; set; }
     }
 }

@@ -117,68 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="1" xml:space="preserve">
-    <value>Unleash your creativity with our app</value>
+  <data name="about" xml:space="preserve">
+    <value>About</value>
   </data>
-  <data name="10" xml:space="preserve">
-    <value>Strokes of approval, artists speak</value>
+  <data name="blog" xml:space="preserve">
+    <value>Blog</value>
   </data>
-  <data name="11" xml:space="preserve">
-    <value>Experience the magic of art meets technology. Our integrated AI enhances your creations, offering suggestions, refining details, and sparking new ideas.</value>
+  <data name="contact" xml:space="preserve">
+    <value>Contact</value>
   </data>
-  <data name="12" xml:space="preserve">
-    <value>"Switching to the drawing app was a game-changer for me. Even on the free plan, I found enough tools to fuel my creativity. Upgrading to the Standard Plan unlocked a whole new world of possibilities with expanded features and cloud storage. The support team is top-notch, and the tutorials are incredibly helpful. Highly recommended!"</value>
+  <data name="features" xml:space="preserve">
+    <value>Features</value>
   </data>
-  <data name="13" xml:space="preserve">
-    <value>"The drawing app has revolutionized the way I create art. With its intuitive interface and diverse toolset, even the free plan offers a remarkable experience. Upgrading to the Standard Plan was a no-brainer for me - the added features and support have truly elevated my artwork. Whether you're a novice or a seasoned artist, this app is a must-have."</value>
+  <data name="home" xml:space="preserve">
+    <value>Home</value>
   </data>
-  <data name="14" xml:space="preserve">
-    <value>“Experience the magic of art meets technology. Our integrated AI enhances your creations, offering suggestions, refining details, and sparking new ideas eets technology. Our integrated AI enhances your creations, offering suggestions, refining details, and sparking new ideas”</value>
-  </data>
-  <data name="15" xml:space="preserve">
-    <value>Discover our pricing plans</value>
-  </data>
-  <data name="16" xml:space="preserve">
-    <value>Experience the magic of art meets technology. Our integrated AI enhances your creations, offering suggestions, refining details, and sparking new ideas.</value>
-  </data>
-  <data name="2" xml:space="preserve">
-    <value>Our drawing app is not just a tool; it's a portal to a world where your ideas, dreams, and imagination take tangible form.</value>
-  </data>
-  <data name="3" xml:space="preserve">
-    <value>Join 4,000+ companies already growing</value>
-  </data>
-  <data name="4" xml:space="preserve">
-    <value>Artistic Alchemy</value>
-  </data>
-  <data name="5" xml:space="preserve">
-    <value>Experience the magic of art meets technology. Our integrated AI enhances your creations, offering suggestions, refining details, and sparking new ideas. Unleash the power of AI to amplify your artistic journey with Viavia.</value>
-  </data>
-  <data name="6" xml:space="preserve">
-    <value>Experience the magic of art meets technology.</value>
-  </data>
-  <data name="7" xml:space="preserve">
-    <value>Style Transfer</value>
-  </data>
-  <data name="8" xml:space="preserve">
-    <value>Experience the magic of art meets technology. Our integrated AI enhances your creations, offering suggestions, refining details, and sparking new ideas.</value>
-  </data>
-  <data name="9" xml:space="preserve">
-    <value>Experience the magic of art meets technology.</value>
-  </data>
-  <data name="dynamic_text1" xml:space="preserve">
-    <value>Generate Studio Lighting
-</value>
-  </data>
-  <data name="dynamic_text2" xml:space="preserve">
-    <value>Create Background Image</value>
-  </data>
-  <data name="dynamic_text3" xml:space="preserve">
-    <value>Generate Rain Fall On Image</value>
-  </data>
-  <data name="dynamic_text4" xml:space="preserve">
-    <value>Change the color of the eyes</value>
-  </data>
-  <data name="dynamic_text5" xml:space="preserve">
-    <value>Generate Studio Lighting</value>
+  <data name="pricing" xml:space="preserve">
+    <value>Pricing</value>
   </data>
 </root>

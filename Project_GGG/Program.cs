@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Project_GGG;
 using Project_GGG.Models;
@@ -22,6 +23,7 @@ builder.Host.UseSerilog();
 
 //    logging.AddSeq();
 //});
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -45,7 +47,7 @@ builder.Services.Configure<RequestLocalizationOptions>
             new CultureInfo("ru-RU"),
             new CultureInfo("en-US")
         };
-        options.DefaultRequestCulture = new RequestCulture("kk-KZ", "kk-KZ");
+        options.DefaultRequestCulture = new RequestCulture("en-US", "en-US");
         options.SupportedCultures = supportCulture;
         options.SupportedUICultures = supportCulture;
     });
@@ -64,7 +66,7 @@ builder.Services.AddAuthentication
     (CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(option =>
     {
-        option.Cookie.Name = ".AspNetCore.HotelAtr.Cookies";
+        option.Cookie.Name = ".AspNetCore.ProjectGGG.Cookies";
         option.ExpireTimeSpan = TimeSpan.FromMinutes(1);
         option.SlidingExpiration = true;
         option.LoginPath = "/Account/Login";

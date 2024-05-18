@@ -6,6 +6,7 @@ using Project_GGG.Models;
 using System.Diagnostics;
 using System.Security.Claims;
 using System.Globalization;
+using Microsoft.Extensions.Options;
 
 namespace Project_GGG.Controllers
 {
@@ -13,11 +14,17 @@ namespace Project_GGG.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private ProjectGGGContext _db;
+        private IConfiguration _config;
+        private IOptions<ApiEndpoint> _settings;
 
-        public HomeController(ILogger<HomeController> logger,
+        public HomeController(ILogger<HomeController> logger, 
+            IConfiguration config,
+             IOptions<ApiEndpoint> settings,
             ProjectGGGContext db)
         {
             _logger = logger;
+            _config = config;
+            _settings = settings;
             _db = db;
         }
 
@@ -28,11 +35,26 @@ namespace Project_GGG.Controllers
         }
 
 
-        [IEFilterAttribute]
+        [TypeFilter(typeof(CustomExceptionFilter), Order = 2)]
+        [TimeElapsed]
         public IActionResult Index(string culture = "")
         {
             GetCultures(culture);
 
+            var data0 = _settings.Value.Url;
+            var data =
+                _config.GetSection("Middleware")
+                .GetSection("EnableContentMiddleware")
+                .Value;
+
+            var data2 =
+            _config.GetSection("Middleware")
+            .GetValue<bool>("EnableContentMiddleware");
+
+
+            var data3 = _config
+                .GetSection("Middleware:EnableContentMiddleware")
+                .Value;
 
             return View();
         }

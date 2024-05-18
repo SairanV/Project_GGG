@@ -8,20 +8,21 @@ namespace Project_GGG.Models
     {
         private Stopwatch timer;
 
-
-
-
-        public void OnActionExecuted(ActionExecutedContext context)
+        public void OnActionExecuting(ActionExecutingContext context)
         {
+            // Инициализация и запуск таймера перед выполнением действия
             timer = Stopwatch.StartNew();
         }
 
-        public void OnActionExecuting(ActionExecutingContext context)
+        public void OnActionExecuted(ActionExecutedContext context)
         {
+            // Остановка таймера после выполнения действия
             timer.Stop();
 
-            string result = "ElapsedTime: " + 
-                $"{timer.ElapsedMilliseconds}ms";
+            string result = "ElapsedTime: " + $"{timer.ElapsedMilliseconds}ms";
+
+            // Опционально: Вывод результата в лог или другой механизм
+            Debug.WriteLine(result);
         }
     }
 }
